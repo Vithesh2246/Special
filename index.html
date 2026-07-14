@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Catch</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- LOADING SCREEN -->
+    <!-- ========================= -->
+
+    <section id="loadingScreen" class="screen">
+
+        <div class="loadingBox">
+
+            <div class="loader"></div>
+
+            <h1>Loading...</h1>
+
+            <div class="progressBar">
+
+                <div id="progress"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- HOME SCREEN -->
+    <!-- ========================= -->
+
+    <section id="homeScreen" class="screen hidden">
+
+        <div class="card">
+
+            <h1 class="title">
+                Welcome, Simbaa Topper! 💖
+
+                <h2 class="vt">Sweet Catch</h2>
+                <p>Ready for a sweet little adventure?</p>
+            <br>
+            </h1>
+
+
+            <button id="startBtn">
+                Play
+            </button>
+
+            <button id="settingsBtn">
+                Settings
+            </button>
+
+            <button id="aboutBtn">
+                About
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- MISSION -->
+    <!-- ========================= -->
+
+    <section id="missionScreen" class="screen hidden">
+
+        <div class="card">
+
+            <h1>
+                Mission
+            </h1>
+
+            <p class="vt-2">
+
+                Collect 10 Kinderjoys.
+
+            </p>
+
+            <p>
+
+                Complete the challenge to unlock a secret reward.
+
+            </p>
+
+            <button id="continueBtn">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- GAME -->
+    <!-- ========================= -->
+
+    <section id="gameScreen" class="screen hidden">
+
+        <div id="scoreBoard">
+
+            Kinderjoys :
+
+            <span id="score">
+
+                0
+
+            </span>
+
+            /10
+
+        </div>
+
+        <div id="gameArea">
+
+            <!-- Falling chocolates appear here -->
+
+            <div id="bucket"></div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- REWARD -->
+    <!-- ========================= -->
+
+   <section id="rewardScreen" class="screen hidden">
+
+    <div class="card rewardCard">
+
+        <div class="giftBox">
+
+            🎁
+
+        </div>
+
+
+        <h1>
+            Reward Unlocked!
+        </h1>
+
+
+        <p>
+            You completed the challenge.
+        </p>
+
+
+        <button id="rewardBtn">
+
+            Open Reward
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- VIDEO -->
+    <!-- ========================= -->
+
+    <section id="videoScreen" class="screen hidden">
+
+    <div id="prepareText">
+        Preparing your surprise...
+    </div>
+
+
+    <video
+    id="birthdayVideo"
+    playsinline
+    preload="auto">
+
+        <source src="assets/video/birthday.mp4" type="video/mp4">
+
+    </video>
+
+
+</section>
+
+<section id="finalScreen" class="screen hidden">
+
+    <div class="card">
+
+        <h1>🎉 Happy Birthday! 🎉</h1>
+
+        <p>
+            Wishing you a day full of happiness,
+            laughter, and unforgettable memories. ❤️
+        </p>
+
+        <button id="watchAgainBtn">
+            ▶ Watch Again
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- SETTINGS POPUP -->
+    <!-- ========================= -->
+
+    <div id="settingsPopup" class="popup hidden">
+
+        <div class="popupCard">
+
+            <h2>
+
+                Settings
+
+            </h2>
+
+            <label>
+
+                Music
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </label>
+
+            <label>
+
+                Sound
+
+                <input
+                    type="checkbox"
+                    checked>
+
+            </label>
+
+            <button id="closeSettings">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- ========================= -->
+    <!-- ABOUT POPUP -->
+    <!-- ========================= -->
+
+    <div id="aboutPopup" class="popup hidden">
+
+        <div class="popupCard">
+
+            <h2>
+
+                About
+
+            </h2>
+
+            <p>
+
+                Catch all 10 chocolates to unlock the secret reward waiting for you.
+
+            </p>
+
+            <button id="closeAbout">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+<audio id="clickSound" src="assets/audio/click.mp3"></audio>
+
+<audio id="catchSound" src="assets/audio/catch.mp3"></audio>
+
+<audio id="winSound" src="assets/audio/win.mp3"></audio>
+
+<audio id="revealSound" src="assets/audio/reveal.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+
+</html>

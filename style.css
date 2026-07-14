@@ -1,0 +1,1679 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Fredoka", sans-serif;
+}
+
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+}
+
+
+/* ==========================
+   BODY BACKGROUND
+========================== */
+
+body{
+
+    background:linear-gradient(
+        180deg,
+        #bde7ff,
+        #ffdff0,
+        #fff5fb
+    );
+
+}
+
+
+/* ==========================
+   COMMON SCREEN
+========================== */
+
+.screen{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:0.6s ease;
+
+}
+
+
+.hidden{
+
+    display:none;
+
+}
+
+
+
+/* ==========================
+   COMMON CARD
+========================== */
+
+.card{
+
+    width:90%;
+
+    max-width:420px;
+
+    background:rgba(255,255,255,0.85);
+
+    padding:40px 30px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.15);
+
+    backdrop-filter:blur(10px);
+
+    animation:cardAppear 0.8s ease;
+
+}
+
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* ==========================
+   TITLES
+========================== */
+
+.title{
+
+    font-size:55px;
+
+    color:#ff5797;
+
+    margin-bottom:15px;
+
+}
+
+
+.card h1{
+
+    color:#ff5797;
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+.subtitle{
+
+    color:#555;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#ff6fa9;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 15px rgba(255,111,169,0.35);
+
+    transition:0.3s;
+
+}
+
+
+button:hover{
+
+    background:#ff4f91;
+
+    transform:translateY(-3px);
+
+}
+
+
+button:active{
+
+    transform:scale(0.95);
+
+}
+
+
+/* ==========================
+   LOADING SCREEN
+========================== */
+
+
+#loadingScreen{
+
+    background:linear-gradient(
+        180deg,
+        #bde7ff,
+        #ffdff0
+    );
+
+}
+
+
+.loadingBox{
+
+    text-align:center;
+
+    animation:fadeIn 1s ease;
+
+}
+
+
+.loadingBox h1{
+
+    margin-top:25px;
+
+    color:#ff5797;
+
+    font-size:35px;
+
+}
+
+
+
+.loader{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    border:10px solid rgba(255,255,255,0.7);
+
+    border-top-color:#ff5797;
+
+    animation:rotateLoader 1s linear infinite;
+
+    margin:auto;
+
+}
+
+
+
+@keyframes rotateLoader{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+.progressBar{
+
+    width:260px;
+
+    height:15px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:25px auto 0;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+#progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:#ff6fa9;
+
+    border-radius:20px;
+
+    animation:loadingProgress 3s linear forwards;
+
+}
+
+
+
+@keyframes loadingProgress{
+
+    from{
+
+        width:0%;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(0.8);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================
+   HOME SCREEN
+========================== */
+
+
+#homeScreen{
+
+    overflow:hidden;
+
+}
+
+
+/* Floating cloud effect */
+
+#homeScreen::before,
+#homeScreen::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:80px;
+
+    background:white;
+
+    border-radius:80px;
+
+    opacity:0.6;
+
+    animation:cloudMove 12s linear infinite;
+
+}
+
+
+#homeScreen::before{
+
+    top:15%;
+
+    left:-250px;
+
+}
+
+
+#homeScreen::after{
+
+    bottom:20%;
+
+    right:-250px;
+
+    animation-delay:4s;
+
+}
+
+
+
+@keyframes cloudMove{
+
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+
+    to{
+
+        transform:translateX(140vw);
+
+    }
+
+}
+
+
+
+/* Game title */
+
+.title{
+
+    animation:titleFloat 3s ease-in-out infinite;
+
+    text-shadow:
+
+    0 5px 10px rgba(255,87,151,0.25);
+
+}
+
+
+
+@keyframes titleFloat{
+
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Home buttons */
+
+#homeScreen button{
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+#homeScreen button::after{
+
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    rgba(255,255,255,0.25);
+
+
+    transition:0.4s;
+
+}
+
+
+
+#homeScreen button:hover::after{
+
+    left:100%;
+
+}
+
+
+/* ==========================
+   MISSION SCREEN
+========================== */
+
+
+#missionScreen{
+
+    background:linear-gradient(
+        180deg,
+        #c7ecff,
+        #ffe4f1
+    );
+
+}
+
+
+/* Mission card */
+
+#missionScreen .card{
+
+    animation:missionAppear 0.8s ease;
+
+}
+
+
+
+@keyframes missionAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(0.7)
+        rotate(-5deg);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        rotate(0deg);
+
+    }
+
+}
+
+
+
+/* Mission heading */
+
+#missionScreen h1{
+
+    font-size:50px;
+
+}
+
+
+
+/* Mission paragraphs */
+
+#missionScreen p{
+
+    color:#555;
+
+    font-size:21px;
+
+    line-height:1.5;
+
+    margin:15px 0;
+
+}
+
+
+
+/* Chocolate symbol animation */
+
+#missionScreen p:first-of-type{
+
+    font-size:28px;
+
+    animation:
+    chocolateBounce 1.5s infinite;
+
+}
+
+
+
+@keyframes chocolateBounce{
+
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Continue button glow */
+
+#continueBtn{
+
+    margin-top:30px;
+
+    animation:
+    buttonGlow 2s infinite;
+
+}
+
+
+
+@keyframes buttonGlow{
+
+
+    0%{
+
+        box-shadow:
+        0 0 0 rgba(255,111,169,0);
+
+    }
+
+
+    50%{
+
+        box-shadow:
+        0 0 25px rgba(255,111,169,0.7);
+
+    }
+
+
+    100%{
+
+        box-shadow:
+        0 0 0 rgba(255,111,169,0);
+
+    }
+
+}
+
+/* ==========================
+   GAME SCREEN
+========================== */
+
+
+#gameScreen{
+
+    flex-direction:column;
+
+    background:linear-gradient(
+        180deg,
+        #bde7ff,
+        #ffe8f3
+    );
+
+}
+
+
+
+/* ==========================
+   SCORE BOARD
+========================== */
+
+
+#scoreBoard{
+
+    position:absolute;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:white;
+
+    padding:12px 35px;
+
+    border-radius:30px;
+
+    font-size:25px;
+
+    font-weight:600;
+
+    color:#ff5797;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.15);
+
+    z-index:10;
+
+}
+
+
+
+/* ==========================
+   GAME AREA
+========================== */
+
+
+#gameArea{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+
+
+/* ==========================
+   BUCKET
+========================== */
+
+
+#bucket{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+
+    width:120px;
+
+    height:80px;
+
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #ffb36b,
+        #ff8055
+    );
+
+
+    border-radius:
+
+    0 0 45px 45px;
+
+
+    border:5px solid #c45b32;
+
+
+    box-shadow:
+
+    0 10px 20px rgba(0,0,0,0.2);
+
+
+}
+
+
+
+/* Bucket handle */
+
+#bucket::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:-35px;
+
+
+    left:15px;
+
+
+    width:80px;
+
+
+    height:45px;
+
+
+    border:8px solid #c45b32;
+
+
+    border-bottom:none;
+
+
+    border-radius:50px 50px 0 0;
+
+
+}
+
+
+
+/* ==========================
+   CHOCOLATE
+========================== */
+
+
+.chocolate{
+
+    position:absolute;
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #9b5a2e,
+        #5b2d13
+    );
+
+
+    border-radius:12px;
+
+
+    box-shadow:
+
+    inset -5px -5px 10px rgba(0,0,0,0.25),
+
+    0 8px 15px rgba(0,0,0,0.2);
+
+
+    animation:
+
+    chocolateSpin 1s infinite alternate;
+
+
+}
+
+
+
+.chocolate::before{
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:10px;
+
+    height:10px;
+
+    background:#d89b55;
+
+
+    border-radius:50%;
+
+
+    top:12px;
+
+    left:12px;
+
+
+}
+
+
+
+@keyframes chocolateSpin{
+
+
+    from{
+
+        transform:rotate(-8deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(8deg);
+
+    }
+
+}
+
+
+/* ==========================
+   REWARD SCREEN
+========================== */
+
+
+#rewardScreen{
+
+    background:linear-gradient(
+        180deg,
+        #ffe8f5,
+        #dff5ff
+    );
+
+}
+
+
+#rewardScreen .card{
+
+    animation:
+    rewardAppear 1s ease;
+
+}
+
+
+
+@keyframes rewardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(0.5)
+        rotate(-8deg);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        rotate(0deg);
+
+    }
+
+}
+
+
+
+#rewardScreen h1{
+
+    animation:
+    rewardGlow 2s infinite;
+
+}
+
+
+
+@keyframes rewardGlow{
+
+
+    0%{
+
+        text-shadow:
+        0 0 0 transparent;
+
+    }
+
+
+    50%{
+
+        text-shadow:
+        0 0 20px #ff6fa9;
+
+    }
+
+
+    100%{
+
+        text-shadow:
+        0 0 0 transparent;
+
+    }
+
+}
+
+
+
+#rewardBtn{
+
+    margin-top:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff8fc4,
+        #ff5797
+    );
+
+
+    animation:
+    buttonPulse 2s infinite;
+
+}
+
+
+
+@keyframes buttonPulse{
+
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+/* ==========================
+   VIDEO SCREEN
+========================== */
+
+
+/* ==========================
+   FULL SCREEN PORTRAIT VIDEO
+========================== */
+
+
+#videoScreen{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    background:black;
+
+    overflow:hidden;
+
+}
+
+
+
+#birthdayVideo{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+
+    width:100%;
+
+    height:100%;
+
+
+    transform:translate(-50%,-50%);
+
+
+    object-fit:contain;
+
+
+    background:black;
+
+
+    opacity:0;
+
+    transition:1s ease;
+
+}
+
+
+
+#birthdayVideo.show{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   POPUPS
+========================== */
+
+
+.popup{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,0.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(5px);
+
+}
+
+
+
+/* Popup box */
+
+
+.popupCard{
+
+    width:90%;
+
+    max-width:380px;
+
+    background:white;
+
+    padding:35px 30px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,0.2);
+
+
+    animation:
+    popupOpen 0.5s ease;
+
+}
+
+
+
+@keyframes popupOpen{
+
+
+    from{
+
+        opacity:0;
+
+        transform:scale(0.7);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+.popupCard h2{
+
+    color:#ff5797;
+
+    font-size:35px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+.popupCard p{
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+/* Settings labels */
+
+
+.popupCard label{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    margin:12px 0;
+
+    background:#fff1f7;
+
+    border-radius:15px;
+
+    color:#555;
+
+    font-size:18px;
+
+}
+
+
+
+
+.popupCard input{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+
+
+/* Close button */
+
+
+.popupCard button{
+
+    margin-top:20px;
+
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+
+@media (max-width:600px){
+
+
+
+    .card{
+
+        width:88%;
+
+        padding:30px 20px;
+
+        border-radius:30px;
+
+    }
+
+
+
+    .title{
+
+        font-size:42px;
+
+    }
+
+
+
+    .subtitle{
+
+        font-size:17px;
+
+    }
+
+
+
+    .card h1{
+
+        font-size:38px;
+
+    }
+
+
+
+    button{
+
+        font-size:18px;
+
+        padding:14px;
+
+    }
+
+
+
+    .loadingBox h1{
+
+        font-size:30px;
+
+    }
+
+
+
+    .progressBar{
+
+        width:220px;
+
+    }
+
+
+
+    #scoreBoard{
+
+        top:15px;
+
+        font-size:22px;
+
+        padding:10px 25px;
+
+    }
+
+
+
+    #bucket{
+
+        width:95px;
+
+        height:65px;
+
+        bottom:25px;
+
+    }
+
+
+
+    #bucket::before{
+
+        width:65px;
+
+        height:35px;
+
+        left:10px;
+
+    }
+
+
+
+    .chocolate{
+
+        width:45px;
+
+        height:45px;
+
+    }
+
+
+
+    .popupCard{
+
+        width:85%;
+
+        padding:25px 20px;
+
+    }
+
+
+}
+
+/* FORCE HIDE SCREENS AND POPUPS */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* ==========================
+   GIFT ANIMATION
+========================== */
+
+
+.giftBox{
+
+    font-size:90px;
+
+    margin-bottom:20px;
+
+    animation:
+    giftBounce 1.5s infinite;
+
+}
+
+
+
+@keyframes giftBounce{
+
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+.rewardCard{
+
+    animation:
+    rewardAppear 1s ease;
+
+}
+
+
+body{
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    touch-action:none;
+
+}
+
+
+button{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/* ==========================
+   REWARD SPARKLES
+========================== */
+
+
+.rewardCard::before,
+.rewardCard::after{
+
+    content:"✨";
+
+    position:absolute;
+
+    font-size:45px;
+
+    animation:sparkleMove 2s infinite;
+
+}
+
+
+.rewardCard::before{
+
+    top:20px;
+
+    left:25px;
+
+}
+
+
+.rewardCard::after{
+
+    bottom:20px;
+
+    right:25px;
+
+}
+
+
+@keyframes sparkleMove{
+
+    0%{
+
+        transform:scale(1) rotate(0deg);
+
+        opacity:0.5;
+
+    }
+
+
+    50%{
+
+        transform:scale(1.4) rotate(180deg);
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:scale(1) rotate(360deg);
+
+        opacity:0.5;
+
+    }
+
+}
+
+.caught{
+
+    animation:catchPop 0.3s forwards;
+
+}
+
+
+@keyframes catchPop{
+
+
+    from{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:scale(1.8);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    #birthdayVideo{
+
+        width:100%;
+
+        height:100%;
+
+        object-fit:cover;
+
+    }
+
+}
+
+#prepareText{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    color:white;
+    font-size:28px;
+    text-align:center;
+    z-index:100;
+}
+
+/* ==========================
+   VIDEO REVEAL
+========================== */
+
+#videoScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:black;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+#birthdayVideo{
+    width:100%;
+    height:100%;
+    object-fit:contain;   /* instead of cover */
+
+    opacity:0;
+    transition:1s;
+}
+
+#birthdayVideo.show{
+    opacity:1;
+}
+
+
+.vt{
+    font-size: 30px;
+    color: rgba(238, 12, 99, 0.548);
+    font-weight: bolder;
+   
+}
+
+.kinderjoy{
+
+    position:absolute;
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:contain;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
