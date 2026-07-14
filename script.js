@@ -445,30 +445,28 @@ document.addEventListener(
 rewardBtn.addEventListener("click",()=>{
 
     clickSound.currentTime = 0;
-clickSound.play();
+    clickSound.play();
 
-revealSound.currentTime = 0;
-revealSound.play();
+    revealSound.currentTime = 0;
+    revealSound.play();
 
-  rewardScreen.classList.add("hidden");
-
+    rewardScreen.classList.add("hidden");
     videoScreen.classList.remove("hidden");
 
-    // SHOW THE TEXT AGAIN
     document.getElementById("prepareText").style.display = "block";
 
     birthdayVideo.classList.remove("show");
-
-    birthdayVideo.pause();
     birthdayVideo.currentTime = 0;
 
+    // Play immediately
+    birthdayVideo.play().catch(err => console.log(err));
+
+    // After 2.5 sec show the video
     setTimeout(()=>{
 
         document.getElementById("prepareText").style.display = "none";
 
         birthdayVideo.classList.add("show");
-
-        birthdayVideo.play();
 
     },2500);
 
